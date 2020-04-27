@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchData } from './_DATA';
+import './App.css';
 import Table from './Table';
 
 function App() {

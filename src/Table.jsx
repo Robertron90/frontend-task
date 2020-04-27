@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './App.css';
+
 const Table = ({ data }) => {
   const [checkedItems, setCheckedItems] = useState([]);
   if (data.length === 0) return <div>No data yet</div>;
@@ -19,7 +21,10 @@ const Table = ({ data }) => {
   };
 
   const handleSubmit = () => {
-    console.log(checkedItems);
+    let result = `You selected:\n${
+      checkedItems.length > 0 ? checkedItems.join('\n') : 'Nothing'
+    }`;
+    alert(result);
   };
 
   return (
@@ -39,14 +44,18 @@ const Table = ({ data }) => {
               <td>{hotel.name}</td>
               {hotel.dates.map(date => (
                 <td key={`${hotel.name}-${date.date}`}>
-                  <div>
-                    <input
-                      type="checkbox"
-                      onChange={handleCheck}
-                      value={`${hotel.name} room on ${date.date}`}
-                    />
-                    <p>{date.currentPrice}</p>
-                    <p>{date.recommendedPrice}</p>
+                  <div className="cell">
+                    <div className="col">
+                      <input
+                        type="checkbox"
+                        onChange={handleCheck}
+                        value={`${hotel.name} room on ${date.date}`}
+                      />
+                    </div>
+                    <div className="col">
+                      <p>{date.currentPrice}</p>
+                      <p>{date.recommendedPrice}</p>
+                    </div>
                     <p>
                       {date.currentPrice < date.recommendedPrice
                         ? 'High'
