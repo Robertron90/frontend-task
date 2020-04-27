@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
 import { fetchData } from './_DATA';
 import Table from './Table';
 
