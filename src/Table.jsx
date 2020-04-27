@@ -28,13 +28,16 @@ const Table = ({ data }) => {
   };
 
   return (
-    <div>
+    <div className="main">
+      <h2>Hotel Bookings</h2>
       <table>
         <thead>
           <tr>
             <th>Room type</th>
             {tableHeads.map(date => (
-              <th key={date}>{date}</th>
+              <th className="col" key={date}>
+                {date}
+              </th>
             ))}
           </tr>
         </thead>
@@ -56,13 +59,15 @@ const Table = ({ data }) => {
                       <p>{date.currentPrice}</p>
                       <p>{date.recommendedPrice}</p>
                     </div>
-                    <p>
-                      {date.currentPrice < date.recommendedPrice
-                        ? 'High'
-                        : date.currentPrice > date.recommendedPrice
-                        ? 'Low'
-                        : 'Same'}
-                    </p>
+                    <div className="col">
+                      <p>
+                        {date.currentPrice < date.recommendedPrice
+                          ? 'High'
+                          : date.currentPrice > date.recommendedPrice
+                          ? 'Low'
+                          : 'Same'}
+                      </p>
+                    </div>
                   </div>
                 </td>
               ))}
