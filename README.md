@@ -1,8 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## TODO
+
+Current Price is the first value and Recommended Price is the second value in each of the cells. 
+The feature "Recommended price could be adjusted by a person, so it is an input field" is not implemented yet.
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+It installs the npm package
 
 ### `npm start`
 
