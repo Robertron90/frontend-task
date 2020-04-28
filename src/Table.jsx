@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-
 import './App.css';
+import myImage1 from './upwardGreenArrow.png'
+import myImage2 from './downwardRedArrow.png'
+import myImage3 from './blueCheckMark.png'
 
-const Table = ({ data }) => {
+//function Header() {
+  // Import result is the URL of the image
+  //return <img src={myImage1} width="50" height="50" alt="Green Arrow!" />;    
+//}
+
+const Table = ({ data }) => { 
+   
   const [checkedItems, setCheckedItems] = useState([]);
   if (data.length === 0) return <div>No data yet</div>;
 
@@ -26,7 +34,7 @@ const Table = ({ data }) => {
     }`;
     alert(result);
   };
-
+ 
   return (
     <div className="main">
       <h2>Hotel Bookings</h2>
@@ -54,18 +62,20 @@ const Table = ({ data }) => {
                         onChange={handleCheck}
                         value={`${hotel.name} room on ${date.date}`}
                       />
+                     
                     </div>
                     <div className="col">
                       <p>{date.currentPrice}</p>
-                      <p>{date.recommendedPrice}</p>
+                      <p>{date.recommendedPrice}</p>      
+               
                     </div>
                     <div className="col">
                       <p>
                         {date.currentPrice < date.recommendedPrice
-                          ? 'High'
-                          : date.currentPrice > date.recommendedPrice
-                          ? 'Low'
-                          : 'Same'}
+                            ? <img src={myImage1} width="30" height="50" alt="Green Arrow!"></img>
+                            : date.currentPrice > date.recommendedPrice
+                            ? <img src={myImage2} width="60" height="60" alt="Red Arrow!"></img>
+                            : <img src={myImage3} width="70" height="70" alt="Blue Check Mark!"></img>}
                       </p>
                     </div>
                   </div>
@@ -78,6 +88,7 @@ const Table = ({ data }) => {
       <button onClick={handleSubmit}>Apply</button>
     </div>
   );
+  
 };
 
-export default Table;
+export default Table ;

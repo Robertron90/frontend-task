@@ -2,7 +2,7 @@ const DATA = [
   {
     name: 'Luxury',
     dates: [
-      { date: '4/20/2020', currentPrice: 100, recommendedPrice: 150 },
+      { date: '4/20/2020', currentPrice: 100, recommendedPrice: 100 },
       { date: '4/21/2020', currentPrice: 250, recommendedPrice: 200 },
       { date: '4/22/2020', currentPrice: 200, recommendedPrice: 200 },
     ],
@@ -10,7 +10,7 @@ const DATA = [
   {
     name: 'Standard For Two',
     dates: [
-      { date: '4/20/2020', currentPrice: 100, recommendedPrice: 150 },
+      { date: '4/20/2020', currentPrice: 150, recommendedPrice: 100 },
       { date: '4/21/2020', currentPrice: 150, recommendedPrice: 200 },
       { date: '4/22/2020', currentPrice: 200, recommendedPrice: 250 },
     ],
